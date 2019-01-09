@@ -1,0 +1,23 @@
+﻿@model CV.Application.DTO.Contacts.ContactView
+@{
+    ViewBag.Title = "Contact";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(contact=>contact.Name)
+        @Html.TextBoxFor(contact=>contact.Name)
+    </div>
+    <div>
+        @Html.LabelFor(contact=>contact.Email)
+        @Html.TextBoxFor(contact=>contact.Email)
+    </div>
+    <div>
+        @Html.LabelFor(contact=>contact.Message)
+        @Html.TextBoxFor(contact=>contact.Message)
+    </div>
+    <div>
+        <input type="submit" value="Send" />
+    </div>
+}

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DE7574E-D2D6-48F3-8DB0-2E0696435747}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CvScore.Application</RootNamespace>
+    <AssemblyName>CvScore.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapperBootStrapper.cs" />
+    <Compile Include="DTO\Accounts\AccountDTO.cs" />
+    <Compile Include="DTO\Accounts\LogOnDTO.cs" />
+    <Compile Include="DTO\ContactDTO.cs" />
+    <Compile Include="DTO\Profiles\EducationDTO.cs" />
+    <Compile Include="DTO\MessageDTO.cs" />
+    <Compile Include="DTO\Profiles\ProfileDTO.cs" />
+    <Compile Include="DTO\SkillDTO.cs" />
+    <Compile Include="DTO\Profiles\SocialNetworkDTO.cs" />
+    <Compile Include="Mappers\AccountMapper.cs" />
+    <Compile Include="Mappers\ContactMapper.cs" />
+    <Compile Include="Mappers\MessageMapper.cs" />
+    <Compile Include="Mappers\ProfileMapper.cs" />
+    <Compile Include="Mappers\SkillMapper.cs" />
+    <Compile Include="Messaging\Accounts\GetAccountRequest.cs" />
+    <Compile Include="Messaging\Accounts\GetAccountResponse.cs" />
+    <Compile Include="Messaging\Accounts\GetAllAccountRequest.cs" />
+    <Compile Include="Messaging\Accounts\GetAllAccountResponse.cs" />
+    <Compile Include="Messaging\Accounts\RemoveAccountResponse.cs" />
+    <Compile Include="Messaging\Accounts\CreateAccountRequest.cs" />
+    <Compile Include="Messaging\Accounts\CreateAccountResponse.cs" />
+    <Compile Include="Messaging\Accounts\RemoveAccountRequest.cs" />
+    <Compile Include="Messaging\Accounts\UpdateAccountRequest.cs" />
+    <Compile Include="Messaging\Accounts\UpdateAccountResponse.cs" />
+    <Compile Include="Messaging\Contacts\CreateContactRequest.cs" />
+    <Compile Include="Messaging\Contacts\CreateContactResponse.cs" />
+    <Compile Include="Messaging\Contacts\GetAllContactRequest.cs" />
+    <Compile Include="Messaging\Contacts\GetContactRequest.cs" />
+    <Compile Include="Messaging\Contacts\GetAllContactResponse.cs" />
+    <Compile Include="Messaging\Contacts\GetContactResponse.cs" />
+    <Compile Include="Messaging\Contacts\RemoveContactRequest.cs" />
+    <Compile Include="Messaging\Contacts\RemoveContactResponse.cs" />
+    <Compile Include="Messaging\Messages\GetAllMessageRequest.cs" />
+    <Compile Include="Messaging\Messages\GetAllMessageResponse.cs" />
+    <Compile Include="Messaging\Messages\GetMessageRequest.cs" />
+    <Compile Include="Messaging\Messages\GetMessageResponse.cs" />
+    <Compile Include="Messaging\Messages\RemoveMessageResponse.cs" />
+    <Compile Include="Messaging\Messages\CreateMessageRequest.cs" />
+    <Compile Include="Messaging\Messages\CreateMessageResponse.cs" />
+    <Compile Include="Messaging\Messages\RemoveMessageRequest.cs" />
+    <Compile Include="Messaging\Profiles\CreateProfileRequest.cs" />
+    <Compile Include="Messaging\Profiles\CreateProfileResponse.cs" />
+    <Compile Include="Messaging\Profiles\GetProfileReponse.cs" />
+    <Compile Include="Messaging\Profiles\GetProfileRequest.cs" />
+    <Compile Include="Messaging\Profiles\RemoveProfileRequest.cs" />
+    <Compile Include="Messaging\Profiles\RemoveProfileResponse.cs" />
+    <Compile Include="Messaging\Profiles\UpdateProfileRequest.cs" />
+    <Compile Include="Messaging\Profiles\UpdateProfileRespose.cs" />
+    <Compile Include="Messaging\BaseResponse.cs" />
+    <Compile Include="Messaging\Skills\CreateSkillRequest.cs" />
+    <Compile Include="Messaging\Skills\CreateSkillResponse.cs" />
+    <Compile Include="Messaging\Skills\GetAllSkillRequest.cs" />
+    <Compile Include="Messaging\Skills\GetAllSkillResponse.cs" />
+    <Compile Include="Messaging\Skills\GetSkillRequest.cs" />
+    <Compile Include="Messaging\Skills\GetSkillResponse.cs" />
+    <Compile Include="Messaging\Skills\UpdateSkillRequest.cs" />
+    <Compile Include="Messaging\Skills\UpdateSkillResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicePresenting\IProfileService.cs" />
+    <Compile Include="ServicePresenting\ISkillService.cs" />
+    <Compile Include="ServicePresenting\IAccountService.cs" />
+    <Compile Include="ServicePresenting\IContactService.cs" />
+    <Compile Include="ServicePresenting\IMessageService.cs" />
+    <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\ContactService.cs" />
+    <Compile Include="Service\MessageService.cs" />
+    <Compile Include="Service\ProfileService.cs" />
+    <Compile Include="Service\SkillService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
